@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Activity Tracker</string>
+    <string name="title_item_list">Items</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="navigation_drawer_header_title">Activity Tracker</string>
+
+
+    <string name="walking">walking</string>
+    <string name="running">running</string>
+    <string name="descending">descending stairs</string>
+    <string name="ascending">ascending stairs</string>
+</resources>
