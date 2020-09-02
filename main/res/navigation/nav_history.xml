@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_history"
+    app:startDestination="@id/mainStubFragment">
+
+    <fragment
+        android:id="@+id/mainStubFragment"
+        android:name="com.specknet.orientandroid.MainStubFragment"
+        android:label="ActiveTrack"
+        tools:layout="@layout/main_stub_fragment">
+        <action
+            android:id="@+id/action_mainStubFragment_to_activeDayListFragment"
+            app:destination="@id/activeDayListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/mainStubFragment" />
+        <argument
+            android:name="menuResource"
+            android:defaultValue="@menu/menu_navigation"
+            app:argType="reference" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/activeDayListFragment"
+        android:name="com.specknet.orientandroid.ActiveDayListFragment"
+        android:label="History"
+        tools:layout="@layout/fragment_active_day_list">
+        <action
+            android:id="@+id/action_activeDayListFragment_to_activeDayDetailFragment"
+            app:destination="@id/activeDayDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/activeDayListFragment" />
+        <argument
+            android:name="menuResource"
+            android:defaultValue="@menu/empty"
+            app:argType="reference" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/activeDayDetailFragment"
+        android:name="com.specknet.orientandroid.ActiveDayDetailFragment"
+        android:label="History"
+        tools:layout="@layout/fragment_active_day_detail">
+        <argument
+            android:name="date"
+            app:argType="string" />
+        <argument
+            android:name="menuResource"
+            android:defaultValue="@menu/empty"
+            app:argType="reference" />
+    </fragment>
+</navigation>

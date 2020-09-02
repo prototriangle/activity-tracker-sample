@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="longClickListener"
+            type="android.view.View.OnLongClickListener" />
+
+        <variable
+            name="day"
+            type="com.specknet.orientandroid.data.ActiveDay" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{clickListener}"
+        android:onLongClick="@{longClickListener}">
+
+        <TextView
+            android:id="@+id/ItemDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@{day.date}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="16dp"
+            tools:text="01-12-18" />
+
+        <ImageView
+            android:id="@+id/walkImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/ItemDate"
+            app:layout_constraintTop_toBottomOf="@+id/ItemDate"
+            app:srcCompat="@drawable/ic_noun_walking" />
+
+        <TextView
+            android:id="@+id/walkText"
+            android:layout_width="@dimen/listSecondWidth"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            app:seconds="@{day.walkingSeconds}"
+            app:layout_constraintBottom_toBottomOf="@+id/walkImageView"
+            app:layout_constraintStart_toEndOf="@+id/walkImageView"
+            app:layout_constraintTop_toTopOf="@+id/walkImageView"
+            tools:text="10000" />
+
+        <ImageView
+            android:id="@+id/runImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@+id/walkText"
+            app:layout_constraintTop_toTopOf="@+id/walkImageView"
+            app:srcCompat="@drawable/ic_noun_running" />
+
+        <TextView
+            android:id="@+id/runText"
+            android:layout_width="@dimen/listSecondWidth"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            app:seconds="@{day.runningSeconds}"
+            app:layout_constraintBottom_toBottomOf="@+id/walkImageView"
+            app:layout_constraintStart_toEndOf="@+id/runImageView"
+            app:layout_constraintTop_toTopOf="@+id/walkImageView"
+            tools:text="20" />
+
+        <ImageView
+            android:id="@+id/ascendImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@+id/runText"
+            app:layout_constraintTop_toTopOf="@+id/walkImageView"
+            app:srcCompat="@drawable/ic_noun_ascending" />
+
+        <TextView
+            android:id="@+id/ascText"
+            android:layout_width="@dimen/listSecondWidth"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            app:seconds="@{day.ascendingSeconds}"
+            app:layout_constraintBottom_toBottomOf="@+id/walkImageView"
+            app:layout_constraintStart_toEndOf="@+id/ascendImageView"
+            app:layout_constraintTop_toTopOf="@+id/walkImageView"
+            tools:text="502" />
+
+        <ImageView
+            android:id="@+id/descendImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@+id/ascText"
+            app:layout_constraintTop_toTopOf="@+id/walkImageView"
+            app:srcCompat="@drawable/ic_noun_descending" />
+
+        <TextView
+            android:id="@+id/descText"
+            android:layout_width="@dimen/listSecondWidth"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            app:seconds="@{day.descendingSeconds}"
+            app:layout_constraintBottom_toBottomOf="@+id/walkImageView"
+            app:layout_constraintStart_toEndOf="@+id/descendImageView"
+            app:layout_constraintTop_toTopOf="@+id/walkImageView"
+            tools:text="32"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
